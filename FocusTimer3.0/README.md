@@ -1,4 +1,4 @@
-<h1 align="center">Focus Timer 2.0  - Pomodoro style</h1>
+<h1 align="center">Focus Timer 3.0  - Pomodoro style</h1>
 
 <p align="center" style="color: gray"><strong>PT-BR</strong>: Temporizador estilo Pomodoro</p>
 </br>
@@ -65,19 +65,3 @@ The layout was sent via Figma.
 - Controlar o volume dos audios
 - Pausar ou reiniciar o temporizador
 
-Melhorias no código:
-
-- Foram feitas melhorias no código para deixá-lo mais limpo e visual, seguindo boas práticas de Clean Code.
-
-O projeto possui adaptação para telas de celular e desktop. 
-</br>
-O layout para consulta foi enviado através da plataforma Figma.
-</br>
-Projeto feito no curso Explorer da Rocketseat.
-</br>
-</br>
-- Online project: https://lidiabrentano.github.io/focus-timer-2.0/
-</br>
-
------
-<p align="center">By Lídia Brentano 💜</p>
