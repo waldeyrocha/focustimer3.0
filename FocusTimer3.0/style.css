@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+    --ff-body: "Roboto", sans-serif;
+
+    --whitebg-color: hsla(240, 6%, 21%, 1);
+    --whitebg-On: #02799D;
+    --whitebg-buttonbg: #E1E1E6;
+    --contrast: #FFFFFF;
+
+    --darkbg-bg: #121214;
+    --darkbg-On: #0A3442;
+    --darkbg-controls: hsla(240, 7%, 78%, 1);
+    --darkbg-buttonbg: #29292E;
+}
+
+.modeButton {
+    position: absolute;
+    width: clamp(0.5rem, 0.5rem, 3rem);;
+    top: clamp(2rem, 3rem + 3vw, 6rem);
+    right: clamp(2rem, 3rem + 3vw, 6rem);
+}
+.modeOff {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+.timer-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+}
+.timer {
+    display: flex;
+    font-family: var(--ff-body);
+    font-size: clamp(7rem, 7rem + 3vw , 12.6rem);
+    color: var(--whitebg-color);
+    padding: 0  5rem;
+}
+.hide {
+    display: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    transition-property: "transform";
+    transition-duration: 200ms;
+    transition-timing-function: ease; 
+}
+button:hover {
+    transform: scale(1.1);
+}
+
+.controls {
+    display: flex;
+    gap: 2rem;
+}
+.controls button svg path {
+    fill: var(--whitebg-color);
+}
+
+.controls button svg {
+    width: clamp(3rem, 3rem + 3vw, 4.8rem);
+    height: auto;
+}
+
+.sound {
+    display: grid;
+    grid-template-areas: 
+    "A B"
+    "C D";
+    justify-content: center;
+    
+    gap: clamp(1.8rem, 1.8rem + 3vw, 3.5rem );
+}
+.sound > div:nth-child(1) {
+    grid-area: A;
+}
+.sound > div:nth-child(2) {
+    grid-area: B;
+}
+.sound > div:nth-child(3) {
+    grid-area: C;
+}
+.sound > div:nth-child(4) {
+    grid-area: D;
+}
+
+.sound > div input {
+    width: clamp(5rem, 6rem + 3vw, 9rem);;
+    opacity: 1;
+    accent-color: var(--whitebg-color);     
+} 
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: (5rem, 5rem + 1vw, 9rem);
+    height: 0.4rem;
+    cursor: pointer;
+    
+    background: var(--whitebg-color);
+    border-radius: 5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 500rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+}
+
+.sound > div.On {
+    background: var(--whitebg-On); 
+}
+.sound > div.On button svg path {
+    fill: var(--contrast);
+}
+.sound > div.On input {
+    accent-color: var(--contrast);
+}
+div.On input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.4rem;
+    cursor: pointer;
+    
+    background: var(--contrast);
+    border-radius: 5px;
+}
+.sound > div {
+    background: var(--whitebg-buttonbg);
+    border-radius: 2.4rem;
+    padding: 2.4rem;
+    
+    width:  clamp(7rem, 8rem + 4vw, 13.8rem);
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    gap: 3.2rem;  
+}
+
+/* darkmode */
+
+main.darkmode {
+    background: var(--darkbg-bg);
+}
+.controls button.darkmode svg path {
+    fill: var(--darkbg-controls);
+}
+.timer.darkmode {
+    color: var(--contrast);
+}
+.sound > div.darkmode {
+    background: var(--darkbg-buttonbg);
+}
+.sound > div.darkmode button svg path {
+    fill: var(--darkbg-controls);
+}
+.sound > div.darkmode input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.4rem;
+    cursor: pointer;
+    
+    background: var(--contrast);
+    border-radius: 5px;
+}
+.sound > div.darkmode input {
+    accent-color: var(--contrast);
+}
+
+.sound > div.darkmode.On {
+    background: var(--darkbg-On);
+}
+.sound > div.darkmode.On button svg path {
+    fill: var(--contrast);
+}
+
+/* ALERTA DE ERRO */
+
+.alert-error {
+    position: absolute;
+    background: var(--whitebg-color);
+    font-family: var(--ff-body);
+    font-size: 1.6rem;
+    color: var(--contrast);
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: .8rem 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-3rem);
+    transition: transform .5s;
+}
+
+.alert-error.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*DESKTOP*/
+
+@media (min-width: 800px ) {
+    main {
+        flex-direction: row;
+        gap: clamp(10rem, 10rem + 3vw, 19rem);
+    }
+}
