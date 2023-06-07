@@ -1,13 +1,5 @@
 <h1 align="center">Focus Timer 3.0  - Pomodoro style</h1>
 
-<p align="center" style="color: gray"><strong>PT-BR</strong>: Temporizador estilo Pomodoro</p>
-</br>
-<p align="center">
-<img alt="layout for light mode on desktop" src=".github/desktop-light-mode.png" width="45%" > 
-<img alt="layout for dark mode on desktop" src=".github/desktop-dark-mode.png" width="45%" >  
-</p>
-
-</br>
 
 ## 🚀 Technologies 
 <strong>EN:</strong> This project was developed with the following technologies:
